@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 # ==================== 配置区域 ====================
 # 这里配置您的真实数据库路径
 # 假设您已经有了一个结构化的数据库文件
-DB_PATH = "./local_data/financial_data.db" 
+DB_PATH = "./local_data/financial.db" 
 
 # ==================== 工具函数定义 ====================
 
