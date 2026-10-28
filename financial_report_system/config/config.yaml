@@ -1,0 +1,58 @@
+# Financial Report Analysis System Configuration
+
+# LLM Configuration
+llm:
+  model: "gpt-4"
+  temperature: 0.7
+  max_tokens: 2000
+  timeout: 60
+
+# Agent Configuration
+agent:
+  max_consecutive_auto_reply: 10
+  human_input_mode: "NEVER"
+  code_execution_config: false
+
+# Data Processing
+data:
+  supported_formats:
+    - pdf
+    - excel
+    - html
+  output_format: "excel"  # excel or sql
+  database_url: "sqlite:///data/processed/financial_reports.db"
+
+# Financial Metrics
+metrics:
+  core:
+    - revenue
+    - net_profit
+    - gross_margin
+    - asset_liability_ratio
+    - roe
+    - operating_cash_flow
+    - total_assets
+    - total_liabilities
+  
+# Visualization
+visualization:
+  default_chart_type: "line"
+  save_path: "data/charts/"
+  dpi: 300
+  figsize: [12, 6]
+
+# Web Scraping
+scraping:
+  platforms:
+    - name: "巨潮资讯"
+      url: "http://www.cninfo.com.cn"
+    - name: "东方财富"
+      url: "http://data.eastmoney.com"
+  timeout: 30
+  retry: 3
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/system.log"
+  rotation: "10 MB"
