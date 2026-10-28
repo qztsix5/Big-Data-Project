@@ -19,8 +19,9 @@ from autogen_core.models import UserMessage
 
 # ==================== 模型客户端配置 ====================
 
-LLM_API_KEY = "ak_1E08gJ7Z913j3sq1ml7Bn5vX2hd2O"
-#LLM_API_KEY = "ak_1Tj8qt04I0Jn6sD3wU4oI3fw73r46"
+LLM_API_KEY = os.environ.get("LLM_API_KEY", "").strip()
+if not LLM_API_KEY:
+    raise RuntimeError("请设置环境变量 LLM_API_KEY 后再运行；请勿将密钥写入源码。")
 LLM_BASE_URL = "https://api.longcat.chat/openai"
 LLM_MODEL_ID = "LongCat-Flash-Chat"  
 
